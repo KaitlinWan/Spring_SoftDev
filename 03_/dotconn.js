@@ -1,7 +1,10 @@
 var c = document.getElementById("playground");
 var ctx = c.getContext("2d")
 var drawn = false;
-var prevX, prevY;
+var state = "stop";
+var radius = 0;
+
+//window.requestAnimationFrame(callback)
 
 var butt = document.getElementById("clear")
 
