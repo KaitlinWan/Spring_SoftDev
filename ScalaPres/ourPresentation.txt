@@ -1,0 +1,9 @@
+HELLO KYLE! THIS IS KAITLIN :D
+
+What will be in our presentation!
+
+1. Origins of Scala
+2. Why should we learn Scala (good stuff about Scala)
+3. Compare + Contrast w/ Java
+4. Bad things about Scala
+5. Who uses Scala
