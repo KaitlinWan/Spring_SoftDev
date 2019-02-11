@@ -51,7 +51,7 @@ var drawDot = function() {
 };
 
 var dvdLogoSetup = function() {
-  stopIt();//Stop the circle IF it was pressed
+  stopIt();//Stop the circle IF it was pressed + stops all movement!
   console.log("clear canvas");
   ctx.clearRect(0, 0, 500, 500); //clear
   window.cancelAnimationFrame(requestID);
