@@ -6,17 +6,15 @@
 
 import pymongo
 import json
-import urllib.request
+import pprint
 
 SERVER_ADDR="157.230.63.56"
-connection=pymongo.MongoClient(SERVER_ADDR)
+connection=pymongo.MongoClient(SERVER_ADDR,27017)
 db = connection["DoubleU"]
 col = db["Laureate"]
 
-data = urllib.request.urlopen("http://api.nobelprize.org/v1/laureate.json")
-parsed = json.loads(data.read())
+with open("laureate.json") as stuff:
+    data = json.load(stuff)
+    pprint.pprint(data)
 
-with open(data) as stuff:
-    allL = json.load(stuff)
 
-col.insert(allL)
