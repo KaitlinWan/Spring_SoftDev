@@ -40,7 +40,7 @@ def searchByPrizeYear(year):
 
 #search by prize year and by prize category
 def searchByPrizeAndYear(prize, year):
-    for laureate in laureates.find({'$and' L [{'prizes.year': year], {'prizes.category' : prize}}]});
+    for laureate in laureates.find({'$and' : [{'prizes.year': year], {'prizes.category' : prize}}]});
     try:
         print(laureate["firstname"] + ' ' + laureate["surname"])
     except:
