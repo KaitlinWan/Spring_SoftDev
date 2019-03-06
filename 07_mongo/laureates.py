@@ -58,12 +58,12 @@ def searchByPrize(prize):
 
 #search by the number of prizes won by the laureate
 def searchByNum(prizeNum):
-    for laureate in laureates.find({'$where' : 'this.prizes.length>' + prizeNum});
-    try:
-        print(laureate["firstname"] + ' ' + laureate["surname"])
-    except:
-        #in case the laureate doesnt have a last name
-        print(laureate["firstname"])
+    for laureate in laureates.find({'$where' : 'this.prizes.length>' + prizeNum}):
+        try:
+            print(laureate["firstname"] + ' ' + laureate["surname"])
+        except:
+            #in case the laureate doesnt have a last name
+            print(laureate["firstname"])
 
 
 searchByPrize('chemistry')
