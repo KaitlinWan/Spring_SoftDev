@@ -25,7 +25,7 @@ col = db.laureates
 
 f = open("db.json")
 data = json.load(f)
-print(data)
+print(data['laureates'])
 for x in data['laureates']:
     col.insert_many(x)
 
