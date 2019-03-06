@@ -18,7 +18,7 @@ import json
 from pprint import pprint
 
 #setup
-SERVER_ADDR = "157.230.63.56"
+SERVER_ADDR = "localhost"
 connection=pymongo.MongoClient(SERVER_ADDR)
 #connection.drop_database("DoubleU")
 db = connection.DoubleU
