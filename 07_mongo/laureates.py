@@ -40,12 +40,12 @@ def searchByPrizeYear(year):
 
 #search by prize year and by prize category
 def searchByPrizeAndYear(prize, year):
-    for laureate in laureates.find({'$and' : [{'prizes.year': year}, {'prizes.category' : prize}]});
-    try:
-        print(laureate["firstname"] + ' ' + laureate["surname"])
-    except:
-        #in case the laureate doesnt have a last name
-        print(laureate["firstname"])
+    for laureate in laureates.find({'$and' : [{'prizes.year': year}, {'prizes.category' : prize}]}):
+        try:
+            print(laureate["firstname"] + ' ' + laureate["surname"])
+        except:
+            #in case the laureate doesnt have a last name
+            print(laureate["firstname"])
 
 #search for laureates by prize category
 def searchByPrize(prize):
