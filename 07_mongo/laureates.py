@@ -15,6 +15,7 @@ it into our new collection after loading it
 '''
 import pymongo
 import json
+from pprint import pprint
 
 #setup
 SERVER_ADDR = "157.230.63.56"
@@ -25,9 +26,9 @@ col = db.laureates
 
 f = open("db.json")
 data = json.load(f)
-print(data['laureates'])
+pprint(data['laureates'])
 for x in data['laureates']:
-    print(x)
+    pprint(x)
     #col.insert_many(x)
 
 
