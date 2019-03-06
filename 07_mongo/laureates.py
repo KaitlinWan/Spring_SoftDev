@@ -29,7 +29,7 @@ data = json.load(f)
 pprint(data['laureates'])
 for x in data['laureates']:
     pprint(x)
-    col.insert_many(x)
+    col.insert(x)
 
 
 
