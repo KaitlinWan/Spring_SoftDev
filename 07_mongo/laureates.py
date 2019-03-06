@@ -23,10 +23,10 @@ connection=pymongo.MongoClient(SERVER_ADDR)
 db = connection.DoubleU
 col = db.laureates
 
-f = open("laureate.json")
+f = open("db.json")
 data = json.load(f)
-print(data)
-col.insert_many(data)
+print(data[0])
+col.insert_many(data[0])
 
 
 
