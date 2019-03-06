@@ -17,16 +17,17 @@ import pymongo
 import json
 
 #setup
-SERVER_ADDR = "68.183.28.21"
-connection=pymongo.MongoClient(SERVER_ADDR,27017)
-db = connection["DoubleU"]
-col = db["Laureate"]
+SERVER_ADDR = "68.183.28.211"
+connection=pymongo.MongoClient(SERVER_ADDR)
+connection.drop_database("DoubleU")
+db = connection.DoubleU
+col = db.laureates
 
-db.laureates.drop()
-with open('laureate.json') as f:
-    file_data = json.load(f)
+f = open("laureate.json")
+data = json.load(f)
+col.insert_many(data["laureates"])
 
-laureates.insert(file_data["laureates"]
+
 
 #search for laureates by the year prizes were awarded
 def searchByPrizeYear(year):
