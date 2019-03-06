@@ -17,7 +17,7 @@ import pymongo
 import json
 
 #setup
-SERVER_ADDR = "68.183.28.211"
+SERVER_ADDR = "157.230.63.56"
 connection=pymongo.MongoClient(SERVER_ADDR)
 connection.drop_database("DoubleU")
 db = connection.DoubleU
