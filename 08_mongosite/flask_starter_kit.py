@@ -39,7 +39,7 @@ def main():
     # try for wrong ip
     # try for no server open
     global SERVER_ADDR 
-    SERVER_ADDR = "localhost"
+    SERVER_ADDR = "157.230.63.56"
     #try:
     if request.method == "GET":
         return render_template('index.html', server = SERVER_ADDR )
