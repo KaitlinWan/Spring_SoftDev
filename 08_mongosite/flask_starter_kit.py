@@ -21,7 +21,7 @@ Import Directions:
     mongoimport --db <DATABASE_NAME> --collection <COLLECTION_NAME> --drop --file PATH/prizes.json
 '''
 
-SERVER_ADDR = "localhost"
+SERVER_ADDR = "157.230.63.56"
 connection = pymongo.MongoClient(SERVER_ADDR)
 db = connection["Forest"]
 collection = db.nobel
@@ -38,6 +38,7 @@ collection.insert(file_data["prizes"])
 def main():
     # try for wrong ip
     # try for no server open
+    global SERVER_ADDR 
     SERVER_ADDR = "localhost"
     #try:
     if request.method == "GET":
@@ -120,4 +121,5 @@ def first_name(firstname):
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host = "0.0.0.0")
+    app.run()
+    #app.run(host = "0.0.0.0")
