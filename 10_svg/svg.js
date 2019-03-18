@@ -5,30 +5,32 @@
 
 var p = document.getElementById("vimage");
 var c = document.getElementById("but_clear");
+var requestID = 0;
 prev = 0;
 
-var draw = function(e){
-
+var draw = function(e) {
   var dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   dot.setAttribute("cx", e.offsetX);
   dot.setAttribute("cy", e.offsetY);
   dot.setAttribute("r", 20);
-  dot.setAttribute("fill", "magenta");
+  dot.setAttribute("fill", "red");
   dot.setAttribute("stroke", "black");
   p.appendChild(dot)
+  prev = dot
 
-  //if (prev != 0){
-    //  var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-      //line.setAttribute("x1", prev.getAttribute( "cx" ) );
-      //line.setAttribute("y1", prev.getAttribute("cy") );
-      //line.setAttribute("x2", e.offsetX);
-      //line.setAttribute("y2", e.offsetY);
-      //line.setAttribute("stroke", "black");
-      //p.appendChild(line);
-    //}
+  dot.addEventListener('click', function(e) {
+    //e.preventDefault();
+    if (dot.getAttribute("fill") == "red") {
+      dot.setAttribute("fill", "green");
+    } else {
+      p.removeChild(e.target);
+      var x = Math.floor(Math.random() * p.getAttribute("width"));
+      var y = Math.floor(Math.random() * p.getAttribute("height"));
+      draw(x, y)
+    }
+    e.stopPropagation();
+  })
 
-    // Prev holds dot just added
-    prev = dot
 };
 
 
@@ -38,8 +40,6 @@ var clear = function(e) {
   }
   prev = 0
 };
-
-
 
 p.addEventListener('click', draw);
 c.addEventListener("click", clear);
